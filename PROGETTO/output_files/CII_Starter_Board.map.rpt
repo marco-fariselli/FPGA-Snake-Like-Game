@@ -1,0 +1,476 @@
+Analysis & Synthesis report for CII_Starter_Board
+Mon Sep 23 23:37:34 2019
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |CII_Starter_Board|adjust_button:d7|cs
+  9. State Machine - |CII_Starter_Board|FSM_position_apple:d2_apple|cS
+ 10. State Machine - |CII_Starter_Board|FSM_position_per_snake:d0_snake|cS
+ 11. State Machine - |CII_Starter_Board|PS2_port_reciver:d1_keyboard|state_reg
+ 12. State Machine - |CII_Starter_Board|adjust_button:tick_vel_2_pulse|cs
+ 13. General Register Statistics
+ 14. Inverted Register Statistics
+ 15. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 16. Port Connectivity Checks: "PS2_port_reciver:d1_keyboard"
+ 17. Post-Synthesis Netlist Statistics for Top Partition
+ 18. Elapsed Time Per Partition
+ 19. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Mon Sep 23 23:37:34 2019       ;
+; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                      ; CII_Starter_Board                           ;
+; Top-level Entity Name              ; CII_Starter_Board                           ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 824                                         ;
+;     Total combinational functions  ; 755                                         ;
+;     Dedicated logic registers      ; 174                                         ;
+; Total registers                    ; 174                                         ;
+; Total pins                         ; 35                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Top-level entity name                                            ; CII_Starter_Board  ; CII_Starter_Board  ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone IV GX      ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                      ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                               ; Library ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------------------------------+---------+
+; ../digit_to_7_seg.vhd            ; yes             ; User VHDL File  ; C:/Users/marco/OneDrive/Documents/Università/Triennale/Sistemi dig/PROGETTO_2.0/digit_to_7_seg.vhd         ;         ;
+; ../dec_BCD.vhd                   ; yes             ; User VHDL File  ; C:/Users/marco/OneDrive/Documents/Università/Triennale/Sistemi dig/PROGETTO_2.0/dec_BCD.vhd                ;         ;
+; ../FSM_position_apple.vhd        ; yes             ; User VHDL File  ; C:/Users/marco/OneDrive/Documents/Università/Triennale/Sistemi dig/PROGETTO_2.0/FSM_position_apple.vhd     ;         ;
+; ../adjust_button.vhd             ; yes             ; User VHDL File  ; C:/Users/marco/OneDrive/Documents/Università/Triennale/Sistemi dig/PROGETTO_2.0/adjust_button.vhd          ;         ;
+; ../PS2_port_reciver.vhd          ; yes             ; User VHDL File  ; C:/Users/marco/OneDrive/Documents/Università/Triennale/Sistemi dig/PROGETTO_2.0/PS2_port_reciver.vhd       ;         ;
+; ../FSM_position_per_snake.vhd    ; yes             ; User VHDL File  ; C:/Users/marco/OneDrive/Documents/Università/Triennale/Sistemi dig/PROGETTO_2.0/FSM_position_per_snake.vhd ;         ;
+; ../CII_Starter_Board.vhd         ; yes             ; User VHDL File  ; C:/Users/marco/OneDrive/Documents/Università/Triennale/Sistemi dig/PROGETTO_2.0/CII_Starter_Board.vhd      ;         ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------------------------------+---------+
+
+
++------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                ;
++---------------------------------------------+--------------+
+; Resource                                    ; Usage        ;
++---------------------------------------------+--------------+
+; Estimated Total logic elements              ; 824          ;
+;                                             ;              ;
+; Total combinational functions               ; 755          ;
+; Logic element usage by number of LUT inputs ;              ;
+;     -- 4 input functions                    ; 126          ;
+;     -- 3 input functions                    ; 295          ;
+;     -- <=2 input functions                  ; 334          ;
+;                                             ;              ;
+; Logic elements by mode                      ;              ;
+;     -- normal mode                          ; 263          ;
+;     -- arithmetic mode                      ; 492          ;
+;                                             ;              ;
+; Total registers                             ; 174          ;
+;     -- Dedicated logic registers            ; 174          ;
+;     -- I/O registers                        ; 0            ;
+;                                             ;              ;
+; I/O pins                                    ; 35           ;
+;                                             ;              ;
+; Embedded Multiplier 9-bit elements          ; 0            ;
+;                                             ;              ;
+; Maximum fan-out node                        ; KEY[0]~input ;
+; Maximum fan-out                             ; 174          ;
+; Total fan-out                               ; 2730         ;
+; Average fan-out                             ; 2.73         ;
++---------------------------------------------+--------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                          ;
++--------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------+------------------------+--------------+
+; Compilation Hierarchy Node           ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                ; Entity Name            ; Library Name ;
++--------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------+------------------------+--------------+
+; |CII_Starter_Board                   ; 755 (524)           ; 174 (30)                  ; 0           ; 0            ; 0       ; 0         ; 35   ; 0            ; |CII_Starter_Board                                 ; CII_Starter_Board      ; work         ;
+;    |FSM_position_apple:d2_apple|     ; 42 (42)             ; 24 (24)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CII_Starter_Board|FSM_position_apple:d2_apple     ; FSM_position_apple     ; work         ;
+;    |FSM_position_per_snake:d0_snake| ; 123 (123)           ; 84 (84)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CII_Starter_Board|FSM_position_per_snake:d0_snake ; FSM_position_per_snake ; work         ;
+;    |PS2_port_reciver:d1_keyboard|    ; 19 (19)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CII_Starter_Board|PS2_port_reciver:d1_keyboard    ; PS2_port_reciver       ; work         ;
+;    |adjust_button:d7|                ; 7 (7)               ; 5 (5)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CII_Starter_Board|adjust_button:d7                ; adjust_button          ; work         ;
+;    |adjust_button:tick_vel_2_pulse|  ; 5 (5)               ; 5 (5)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CII_Starter_Board|adjust_button:tick_vel_2_pulse  ; adjust_button          ; work         ;
+;    |digit_to_7seg:d4|                ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CII_Starter_Board|digit_to_7seg:d4                ; digit_to_7seg          ; work         ;
+;    |digit_to_7seg:d5|                ; 9 (9)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CII_Starter_Board|digit_to_7seg:d5                ; digit_to_7seg          ; work         ;
+;    |unsigned2digits:d3|              ; 19 (19)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CII_Starter_Board|unsigned2digits:d3              ; unsigned2digits        ; work         ;
++--------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------+------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------+
+; State Machine - |CII_Starter_Board|adjust_button:d7|cs ;
++-------+-------+-------+-------+------------------------+
+; Name  ; cs.s4 ; cs.s3 ; cs.s2 ; cs.s1                  ;
++-------+-------+-------+-------+------------------------+
+; cs.s1 ; 0     ; 0     ; 0     ; 0                      ;
+; cs.s2 ; 0     ; 0     ; 1     ; 1                      ;
+; cs.s3 ; 0     ; 1     ; 0     ; 1                      ;
+; cs.s4 ; 1     ; 0     ; 0     ; 1                      ;
++-------+-------+-------+-------+------------------------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------+
+; State Machine - |CII_Starter_Board|FSM_position_apple:d2_apple|cS ;
++-------+-------+-------+-------+-----------------------------------+
+; Name  ; cS.S4 ; cS.S3 ; cS.S2 ; cS.S1                             ;
++-------+-------+-------+-------+-----------------------------------+
+; cS.S1 ; 0     ; 0     ; 0     ; 0                                 ;
+; cS.S2 ; 0     ; 0     ; 1     ; 1                                 ;
+; cS.S3 ; 0     ; 1     ; 0     ; 1                                 ;
+; cS.S4 ; 1     ; 0     ; 0     ; 1                                 ;
++-------+-------+-------+-------+-----------------------------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------+
+; State Machine - |CII_Starter_Board|FSM_position_per_snake:d0_snake|cS ;
++-------+-------+-------+-------+---------------------------------------+
+; Name  ; cS.S4 ; cS.S3 ; cS.S2 ; cS.S1                                 ;
++-------+-------+-------+-------+---------------------------------------+
+; cS.S1 ; 0     ; 0     ; 0     ; 0                                     ;
+; cS.S2 ; 0     ; 0     ; 1     ; 1                                     ;
+; cS.S3 ; 0     ; 1     ; 0     ; 1                                     ;
+; cS.S4 ; 1     ; 0     ; 0     ; 1                                     ;
++-------+-------+-------+-------+---------------------------------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------+
+; State Machine - |CII_Starter_Board|PS2_port_reciver:d1_keyboard|state_reg ;
++----------------+----------------+---------------+-------------------------+
+; Name           ; state_reg.load ; state_reg.dps ; state_reg.idle          ;
++----------------+----------------+---------------+-------------------------+
+; state_reg.idle ; 0              ; 0             ; 0                       ;
+; state_reg.dps  ; 0              ; 1             ; 1                       ;
+; state_reg.load ; 1              ; 0             ; 1                       ;
++----------------+----------------+---------------+-------------------------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------+
+; State Machine - |CII_Starter_Board|adjust_button:tick_vel_2_pulse|cs ;
++-------+-------+-------+-------+--------------------------------------+
+; Name  ; cs.s4 ; cs.s3 ; cs.s2 ; cs.s1                                ;
++-------+-------+-------+-------+--------------------------------------+
+; cs.s1 ; 0     ; 0     ; 0     ; 0                                    ;
+; cs.s2 ; 0     ; 0     ; 1     ; 1                                    ;
+; cs.s3 ; 0     ; 1     ; 0     ; 1                                    ;
+; cs.s4 ; 1     ; 0     ; 0     ; 1                                    ;
++-------+-------+-------+-------+--------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 174   ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 174   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 134   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------+
+; Inverted Register Statistics                        ;
++-------------------------------------------+---------+
+; Inverted Register                         ; Fan out ;
++-------------------------------------------+---------+
+; FSM_position_apple:d2_apple|pos_X[8]      ; 7       ;
+; FSM_position_apple:d2_apple|pos_X[5]      ; 7       ;
+; FSM_position_apple:d2_apple|pos_X[4]      ; 7       ;
+; FSM_position_apple:d2_apple|pos_X[3]      ; 7       ;
+; FSM_position_apple:d2_apple|pos_X[2]      ; 7       ;
+; FSM_position_apple:d2_apple|pos_Y[8]      ; 7       ;
+; FSM_position_apple:d2_apple|pos_Y[7]      ; 7       ;
+; FSM_position_apple:d2_apple|pos_Y[6]      ; 7       ;
+; FSM_position_apple:d2_apple|pos_Y[4]      ; 7       ;
+; FSM_position_apple:d2_apple|pos_Y[3]      ; 7       ;
+; FSM_position_apple:d2_apple|pos_Y[0]      ; 8       ;
+; FSM_position_per_snake:d0_snake|pos_X1[5] ; 10      ;
+; FSM_position_per_snake:d0_snake|pos_X1[4] ; 10      ;
+; FSM_position_per_snake:d0_snake|pos_X1[1] ; 9       ;
+; FSM_position_per_snake:d0_snake|pos_Y1[2] ; 9       ;
+; FSM_position_per_snake:d0_snake|pos_Y1[0] ; 10      ;
+; FSM_position_per_snake:d0_snake|pos_X2[5] ; 3       ;
+; FSM_position_per_snake:d0_snake|pos_X2[1] ; 3       ;
+; FSM_position_per_snake:d0_snake|pos_X2[0] ; 4       ;
+; FSM_position_per_snake:d0_snake|pos_Y2[2] ; 3       ;
+; FSM_position_per_snake:d0_snake|pos_Y2[0] ; 4       ;
+; FSM_position_per_snake:d0_snake|pos_X3[4] ; 3       ;
+; FSM_position_per_snake:d0_snake|pos_X3[2] ; 3       ;
+; FSM_position_per_snake:d0_snake|pos_Y3[2] ; 3       ;
+; FSM_position_per_snake:d0_snake|pos_Y3[0] ; 4       ;
+; FSM_position_per_snake:d0_snake|pos_X4[2] ; 2       ;
+; FSM_position_per_snake:d0_snake|pos_X4[0] ; 3       ;
+; FSM_position_per_snake:d0_snake|pos_Y4[2] ; 2       ;
+; FSM_position_per_snake:d0_snake|pos_Y4[0] ; 3       ;
+; Total number of inverted registers = 29   ;         ;
++-------------------------------------------+---------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------+
+; 3:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |CII_Starter_Board|PS2_port_reciver:d1_keyboard|b_reg[10]    ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |CII_Starter_Board|PS2_port_reciver:d1_keyboard|n_reg[0]     ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |CII_Starter_Board|FSM_position_per_snake:d0_snake|pos_Y1[8] ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 14 LEs               ; 7 LEs                  ; Yes        ; |CII_Starter_Board|FSM_position_per_snake:d0_snake|pos_X1[3] ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |CII_Starter_Board|FSM_position_per_snake:d0_snake|pos_Y1[0] ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |CII_Starter_Board|FSM_position_per_snake:d0_snake|pos_X1[5] ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |CII_Starter_Board|unsigned2digits:d3|d[0]                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "PS2_port_reciver:d1_keyboard"                                                               ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port         ; Type   ; Severity ; Details                                                                             ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; rx_en        ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; rx_done_tick ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 35                          ;
+; cycloneiii_ff         ; 174                         ;
+;     CLR               ; 40                          ;
+;     ENA CLR           ; 134                         ;
+; cycloneiii_lcell_comb ; 757                         ;
+;     arith             ; 492                         ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 246                         ;
+;         3 data inputs ; 245                         ;
+;     normal            ; 265                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 43                          ;
+;         2 data inputs ; 45                          ;
+;         3 data inputs ; 50                          ;
+;         4 data inputs ; 126                         ;
+;                       ;                             ;
+; Max LUT depth         ; 5.90                        ;
+; Average LUT depth     ; 4.68                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Mon Sep 23 23:37:19 2019
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off PROGETTO -c CII_Starter_Board
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file /users/marco/onedrive/documents/università/triennale/sistemi dig/progetto_2.0/digit_to_7_seg.vhd
+    Info (12022): Found design unit 1: digit_to_7seg-A File: C:/Users/marco/OneDrive/Documents/Università/Triennale/Sistemi dig/PROGETTO_2.0/digit_to_7_seg.vhd Line: 10
+    Info (12023): Found entity 1: digit_to_7seg File: C:/Users/marco/OneDrive/Documents/Università/Triennale/Sistemi dig/PROGETTO_2.0/digit_to_7_seg.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /users/marco/onedrive/documents/università/triennale/sistemi dig/progetto_2.0/dec_bcd.vhd
+    Info (12022): Found design unit 1: unsigned2digits-A File: C:/Users/marco/OneDrive/Documents/Università/Triennale/Sistemi dig/PROGETTO_2.0/dec_BCD.vhd Line: 13
+    Info (12023): Found entity 1: unsigned2digits File: C:/Users/marco/OneDrive/Documents/Università/Triennale/Sistemi dig/PROGETTO_2.0/dec_BCD.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file /users/marco/onedrive/documents/università/triennale/sistemi dig/progetto_2.0/fsm_position_apple.vhd
+    Info (12022): Found design unit 1: FSM_position_apple-A File: C:/Users/marco/OneDrive/Documents/Università/Triennale/Sistemi dig/PROGETTO_2.0/FSM_position_apple.vhd Line: 14
+    Info (12023): Found entity 1: FSM_position_apple File: C:/Users/marco/OneDrive/Documents/Università/Triennale/Sistemi dig/PROGETTO_2.0/FSM_position_apple.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /users/marco/onedrive/documents/università/triennale/sistemi dig/progetto_2.0/adjust_button.vhd
+    Info (12022): Found design unit 1: adjust_button-A File: C:/Users/marco/OneDrive/Documents/Università/Triennale/Sistemi dig/PROGETTO_2.0/adjust_button.vhd Line: 19
+    Info (12023): Found entity 1: adjust_button File: C:/Users/marco/OneDrive/Documents/Università/Triennale/Sistemi dig/PROGETTO_2.0/adjust_button.vhd Line: 12
+Info (12021): Found 2 design units, including 1 entities, in source file /users/marco/onedrive/documents/università/triennale/sistemi dig/progetto_2.0/ps2_port_reciver.vhd
+    Info (12022): Found design unit 1: PS2_port_reciver-A File: C:/Users/marco/OneDrive/Documents/Università/Triennale/Sistemi dig/PROGETTO_2.0/PS2_port_reciver.vhd Line: 15
+    Info (12023): Found entity 1: PS2_port_reciver File: C:/Users/marco/OneDrive/Documents/Università/Triennale/Sistemi dig/PROGETTO_2.0/PS2_port_reciver.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /users/marco/onedrive/documents/università/triennale/sistemi dig/progetto_2.0/fsm_position_per_snake.vhd
+    Info (12022): Found design unit 1: FSM_position_per_snake-A File: C:/Users/marco/OneDrive/Documents/Università/Triennale/Sistemi dig/PROGETTO_2.0/FSM_position_per_snake.vhd Line: 21
+    Info (12023): Found entity 1: FSM_position_per_snake File: C:/Users/marco/OneDrive/Documents/Università/Triennale/Sistemi dig/PROGETTO_2.0/FSM_position_per_snake.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /users/marco/onedrive/documents/università/triennale/sistemi dig/progetto_2.0/cii_starter_board.vhd
+    Info (12022): Found design unit 1: CII_Starter_Board-A File: C:/Users/marco/OneDrive/Documents/Università/Triennale/Sistemi dig/PROGETTO_2.0/CII_Starter_Board.vhd Line: 110
+    Info (12023): Found entity 1: CII_Starter_Board File: C:/Users/marco/OneDrive/Documents/Università/Triennale/Sistemi dig/PROGETTO_2.0/CII_Starter_Board.vhd Line: 7
+Info (12127): Elaborating entity "CII_Starter_Board" for the top level hierarchy
+Info (12128): Elaborating entity "adjust_button" for hierarchy "adjust_button:tick_vel_2_pulse" File: C:/Users/marco/OneDrive/Documents/Università/Triennale/Sistemi dig/PROGETTO_2.0/CII_Starter_Board.vhd Line: 197
+Info (12128): Elaborating entity "PS2_port_reciver" for hierarchy "PS2_port_reciver:d1_keyboard" File: C:/Users/marco/OneDrive/Documents/Università/Triennale/Sistemi dig/PROGETTO_2.0/CII_Starter_Board.vhd Line: 202
+Info (12128): Elaborating entity "FSM_position_per_snake" for hierarchy "FSM_position_per_snake:d0_snake" File: C:/Users/marco/OneDrive/Documents/Università/Triennale/Sistemi dig/PROGETTO_2.0/CII_Starter_Board.vhd Line: 209
+Info (12128): Elaborating entity "FSM_position_apple" for hierarchy "FSM_position_apple:d2_apple" File: C:/Users/marco/OneDrive/Documents/Università/Triennale/Sistemi dig/PROGETTO_2.0/CII_Starter_Board.vhd Line: 222
+Info (12128): Elaborating entity "unsigned2digits" for hierarchy "unsigned2digits:d3" File: C:/Users/marco/OneDrive/Documents/Università/Triennale/Sistemi dig/PROGETTO_2.0/CII_Starter_Board.vhd Line: 259
+Info (12128): Elaborating entity "digit_to_7seg" for hierarchy "digit_to_7seg:d4" File: C:/Users/marco/OneDrive/Documents/Università/Triennale/Sistemi dig/PROGETTO_2.0/CII_Starter_Board.vhd Line: 263
+Info (13000): Registers with preset signals will power-up high File: C:/Users/marco/OneDrive/Documents/Università/Triennale/Sistemi dig/PROGETTO_2.0/FSM_position_per_snake.vhd Line: 30
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "VGA_B[0]" is stuck at GND File: C:/Users/marco/OneDrive/Documents/Università/Triennale/Sistemi dig/PROGETTO_2.0/CII_Starter_Board.vhd Line: 91
+    Warning (13410): Pin "VGA_B[1]" is stuck at GND File: C:/Users/marco/OneDrive/Documents/Università/Triennale/Sistemi dig/PROGETTO_2.0/CII_Starter_Board.vhd Line: 91
+    Warning (13410): Pin "VGA_B[2]" is stuck at GND File: C:/Users/marco/OneDrive/Documents/Università/Triennale/Sistemi dig/PROGETTO_2.0/CII_Starter_Board.vhd Line: 91
+    Warning (13410): Pin "VGA_B[3]" is stuck at GND File: C:/Users/marco/OneDrive/Documents/Università/Triennale/Sistemi dig/PROGETTO_2.0/CII_Starter_Board.vhd Line: 91
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 3 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Users/marco/OneDrive/Documents/Università/Triennale/Sistemi dig/PROGETTO_2.0/CII_Starter_Board.vhd Line: 16
+    Warning (15610): No output dependent on input pin "KEY[2]" File: C:/Users/marco/OneDrive/Documents/Università/Triennale/Sistemi dig/PROGETTO_2.0/CII_Starter_Board.vhd Line: 16
+    Warning (15610): No output dependent on input pin "KEY[3]" File: C:/Users/marco/OneDrive/Documents/Università/Triennale/Sistemi dig/PROGETTO_2.0/CII_Starter_Board.vhd Line: 16
+Info (21057): Implemented 860 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 7 input pins
+    Info (21059): Implemented 28 output pins
+    Info (21061): Implemented 825 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 10 warnings
+    Info: Peak virtual memory: 4804 megabytes
+    Info: Processing ended: Mon Sep 23 23:37:34 2019
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:30
+
+
